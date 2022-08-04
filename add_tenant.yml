@@ -1,0 +1,11 @@
+tasks:
+
+  - name: Add a new tenant
+    cisco.aci.aci_tenant:
+      <<: *aci_login
+      tenant:  "{{ name }}"
+      description: "{{ description if description is defined else omit}}"
+      state: "{{ item.status }}"
+    delegate_to: localhost
+    loop: "{{ tenant }}"
+    when: tenant is defined
