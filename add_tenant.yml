@@ -5,7 +5,7 @@ tasks:
       <<: *aci_login
       tenant:  "{{ name }}"
       description: "{{ description if description is defined else omit}}"
-      state: "{{ item.status }}"
+      state: "{{ status }}"
     delegate_to: localhost
     loop: "{{ tenant }}"
     when: tenant is defined
