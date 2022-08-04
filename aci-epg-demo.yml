@@ -1,4 +1,3 @@
-[cisco@awx aci]$ cat aci-epg-demo.yml
 ---
 - name: Create a Tenant, App profile, VRF, Bridge Domain, and 10 EPGs
   hosts: localhost
@@ -96,4 +95,3 @@
     loop: "{{ aci_epgs }}"
     loop_control:
       loop_var: all_epgs
-[cisco@awx aci]$aci-epg-demo.yml
